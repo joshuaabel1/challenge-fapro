@@ -59,7 +59,7 @@ Este proyecto es una API que permite consultar el valor de la UF (Unidad de Fome
 El endpoint para consultar el valor de la UF es:
 
 ```
-/uf_value/<str:date>/
+/uf-value/<str:date>/
 
 ```
 
@@ -70,7 +70,7 @@ Aquí, <str:date> debe ser reemplazado por la fecha para la que quieres consulta
 Para usar el endpoint, realiza una solicitud GET a la URL. Por ejemplo:
 
 ```
-GET /uf_value/2023-05-11/
+GET /uf-value/2023-05-11/
 
 ```
 Esto devolverá el valor de la UF para el 11 de mayo de 2023.
