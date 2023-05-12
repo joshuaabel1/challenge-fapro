@@ -28,7 +28,7 @@ def get_uf_html(url):
     return response.text
 
 
-def extract_uf_value(html, date):
+def extract_uf_value(html, month, day):
     soup = BeautifulSoup(html, "html.parser")
     table = soup.find("table", {"id": "table_export"})
 
@@ -39,7 +39,6 @@ def extract_uf_value(html, date):
     rows = table.find_all("tr")
     headers = [th.text.strip() for th in rows[0].find_all("th")]
 
-    year, month, day = date.split("-")
     month_name = month_array[month.lstrip("0")]
     month_index = headers.index(month_name)
 
@@ -71,6 +70,9 @@ def get_uf_value(date):
     if not html:
         return None
 
-    uf_value = extract_uf_value(html, date)
+    uf_value = extract_uf_value(html, month, day)
 
     return uf_value
+
+
+print(get_uf_value("2013-1-21"))

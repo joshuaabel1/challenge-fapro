@@ -45,7 +45,10 @@
     ```
     python manage.py runserver
     ```
-
+    
+    ```
+    python3 manage.py runserver
+    ```
 #### Overview:
 
 Este proyecto es una API que permite consultar el valor de la UF (Unidad de Fomento) para una fecha determinada. La fecha debe ser posterior al 01-01-2013 y debe estar en el formato YYYY-MM-DD.
