@@ -15,7 +15,7 @@ class UfValueViewTests(APITestCase):
     @patch('uf_api.views.get_uf_value')
     def test_get_uf_value_success(self, mock_get_uf_value):
         date = '2013-01-01'
-        uf_value = '22.837,06'  # uf_value es ahora una cadena en el formato deseado
+        uf_value = '22.837,06'
         mock_get_uf_value.return_value = uf_value
         response = self.client.get(reverse('uf_value', args=[date]))
         self.assertEqual(response.status_code, status.HTTP_200_OK)

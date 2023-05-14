@@ -22,7 +22,6 @@ def get_uf_html(url):
     response = requests.get(url)
     
     if not response.status_code == 200:
-        print(f"Error getting the page: {response.status_code}")
         return None
     
     return response.text
@@ -33,7 +32,6 @@ def extract_uf_value(html, month, day):
     table = soup.find("table", {"id": "table_export"})
 
     if not table:
-        print("The table was not found on the page.")
         return None
 
     rows = table.find_all("tr")
@@ -47,7 +45,6 @@ def extract_uf_value(html, month, day):
     value_text = cells[month_index - 1].text.strip()
 
     if not value_text:
-        print("No UF value was found for the specified date.")
         return None
 
     value_text = value_text.replace(".", "").replace(",", ".")
@@ -75,4 +72,3 @@ def get_uf_value(date):
     return uf_value
 
 
-print(get_uf_value("2013-1-21"))
